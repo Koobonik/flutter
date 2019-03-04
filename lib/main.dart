@@ -112,119 +112,235 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     //final wordPair = WordPair.random();
+//     return MaterialApp(
+//       title: 'Startup Name Generator',
+//       theme: new ThemeData(          // Add the 3 lines from here... 
+//         primaryColor: Colors.brown,
+//       ),                             // ... to here.
+//       home: RandomWords(),
+//     );
+//   }
+
+  
+// }
+
+// class RandomWordsState extends State<RandomWords> {
+//   // TODO Add build() method
+//   final List<WordPair> _suggestions = <WordPair>[];
+//   final Set<WordPair> _saved = new Set<WordPair>();   // Add this line.
+//   final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
+//   //final _suggestions = <WordPair>[];
+//   //final _biggerFont = const TextStyle(fontSize: 18.0);
+
+  
+  
+//   Widget _buildRow(WordPair pair) {
+//   final bool alreadySaved = _saved.contains(pair);  // Add this line.
+//   return new ListTile(
+//     title: new Text(
+//       pair.asPascalCase,
+//       style: _biggerFont,
+//     ),
+//     trailing: new Icon(   // Add the lines from here... 
+//       alreadySaved ? Icons.favorite : Icons.favorite_border,
+//       color: alreadySaved ? Colors.red : null,
+//     ),
+//      onTap: () {      // Add 9 lines from here...
+//       setState(() {
+//         if (alreadySaved) {
+//           _saved.remove(pair);
+//         } else { 
+//           _saved.add(pair); 
+//         } 
+//       });
+//     },               // ..                   // ... to here.
+//   );
+// }
+
+//   Widget _buildSuggestions() {
+//   return ListView.builder(
+//       padding: const EdgeInsets.all(16.0),
+//       itemBuilder: /*1*/ (context, i) {
+//         if (i.isOdd) return Divider(); /*2*/
+
+//         final index = i ~/ 2; /*3*/
+//         if (index >= _suggestions.length) {
+//           _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+//         }
+//         return _buildRow(_suggestions[index]);
+//       });
+//   }
+
+//   void _pushSaved() {
+//     Navigator.of(context).push(
+//       new MaterialPageRoute<void>(   // Add 20 lines from here...
+//       builder: (BuildContext context) {
+//         final Iterable<ListTile> tiles = _saved.map(
+//           (WordPair pair) {
+//             return new ListTile(
+//               title: new Text(
+//                 pair.asPascalCase,
+//                 style: _biggerFont,
+//               ),
+//             );
+//           },
+//         );
+//         final List<Widget> divided = ListTile
+//           .divideTiles(
+//             context: context,
+//             tiles: tiles,
+//           )
+//           .toList();
+//           return new Scaffold(         // Add 6 lines from here...
+//           appBar: new AppBar(
+//             title: const Text('Saved Suggestions'),
+//           ),
+//           body: new ListView(children: divided),
+//         );                           // ... to here.
+//       },
+//     ),                           // ... to here.
+//     );
+//   }
+
+// @override
+// Widget build(BuildContext context) {
+//   return Scaffold(
+//     appBar: AppBar(
+//       title: Text('코스테스 쿠폰북'),
+//       actions: <Widget>[      // Add 3 lines from here...
+//           new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
+//         ],                      // ... to here.
+//     ),
+//     body: _buildSuggestions(),
+//   );
+// }
+
+  
+// }
+// class RandomWords extends StatefulWidget {
+//   @override
+//   RandomWordsState createState() => new RandomWordsState();
+// }
+
+// 코스테스 쿠폰북
+
+void main() {
+  // debugPaintSizeEnabled = true;
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //final wordPair = WordPair.random();
-    return MaterialApp(
-      title: 'Startup Name Generator',
-      theme: new ThemeData(          // Add the 3 lines from here... 
-        primaryColor: Colors.brown,
-      ),                             // ... to here.
-      home: RandomWords(),
-    );
-  }
-
-  
-}
-
-class RandomWordsState extends State<RandomWords> {
-  // TODO Add build() method
-  final List<WordPair> _suggestions = <WordPair>[];
-  final Set<WordPair> _saved = new Set<WordPair>();   // Add this line.
-  final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
-  //final _suggestions = <WordPair>[];
-  //final _biggerFont = const TextStyle(fontSize: 18.0);
-
-  
-  
-  Widget _buildRow(WordPair pair) {
-  final bool alreadySaved = _saved.contains(pair);  // Add this line.
-  return new ListTile(
-    title: new Text(
-      pair.asPascalCase,
-      style: _biggerFont,
-    ),
-    trailing: new Icon(   // Add the lines from here... 
-      alreadySaved ? Icons.favorite : Icons.favorite_border,
-      color: alreadySaved ? Colors.red : null,
-    ),
-     onTap: () {      // Add 9 lines from here...
-      setState(() {
-        if (alreadySaved) {
-          _saved.remove(pair);
-        } else { 
-          _saved.add(pair); 
-        } 
-      });
-    },               // ..                   // ... to here.
-  );
-}
-
-  Widget _buildSuggestions() {
-  return ListView.builder(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: /*1*/ (context, i) {
-        if (i.isOdd) return Divider(); /*2*/
-
-        final index = i ~/ 2; /*3*/
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-        }
-        return _buildRow(_suggestions[index]);
-      });
-  }
-
-  void _pushSaved() {
-    Navigator.of(context).push(
-      new MaterialPageRoute<void>(   // Add 20 lines from here...
-      builder: (BuildContext context) {
-        final Iterable<ListTile> tiles = _saved.map(
-          (WordPair pair) {
-            return new ListTile(
-              title: new Text(
-                pair.asPascalCase,
-                style: _biggerFont,
-              ),
-            );
-          },
-        );
-        final List<Widget> divided = ListTile
-          .divideTiles(
-            context: context,
-            tiles: tiles,
-          )
-          .toList();
-          return new Scaffold(         // Add 6 lines from here...
-          appBar: new AppBar(
-            title: const Text('Saved Suggestions'),
+    Widget titleSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: Row(
+        children: [
+          Expanded(
+            /*1*/
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /*2*/
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    'Oeschinen Lake Campground',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  'Kandersteg, Switzerland',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
+            ),
           ),
-          body: new ListView(children: divided),
-        );                           // ... to here.
-      },
-    ),                           // ... to here.
+          /*3*/
+          Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          Text('41'),
+        ],
+      ),
+    );
+
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _buildButtonColumn(Colors.brown[500] , Icons.local_cafe, 'Espresso'),
+          _buildButtonColumn(Colors.brown[500] , Icons.near_me, 'ROUTE'),
+          _buildButtonColumn(Colors.brown[500] , Icons.share, 'SHARE'),
+        ],
+      ),
+    );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: Text(
+        'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
+            'Alps. Situated 1,578 meters above sea level, it is one of the '
+            'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+            'half-hour walk through pastures and pine forest, leads you to the '
+            'lake, which warms to 20 degrees Celsius in the summer. Activities '
+            'enjoyed here include rowing, and riding the summer toboggan run.',
+        softWrap: true,
+      ),
+    );
+
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      theme: new ThemeData(          // Add the 3 lines from here... 
+         primaryColor: Colors.brown, // 앱 바의 배경 컬러 설정
+       ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('코스테스 쿠폰북'),
+        ),
+        body: ListView(
+          children: [
+            
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
+      ),
     );
   }
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('코스테스 쿠폰북'),
-      actions: <Widget>[      // Add 3 lines from here...
-          new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
-        ],                      // ... to here.
-    ),
-    body: _buildSuggestions(),
-  );
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
-
-  
-}
-class RandomWords extends StatefulWidget {
-  @override
-  RandomWordsState createState() => new RandomWordsState();
-}
-
