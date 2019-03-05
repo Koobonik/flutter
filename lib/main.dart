@@ -279,6 +279,18 @@ class MyApp extends StatelessWidget {
     Color color = Theme.of(context).primaryColor;
 
     Widget buttonSection = Container(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 버튼아래로 패딩
+        children: [
+          _buildButtonColumn(Colors.brown[500] , Icons.local_cafe, 'Espresso'),
+          _buildButtonColumn(Colors.brown[500] , Icons.near_me, 'ROUTE'),
+          _buildButtonColumn(Colors.brown[500] , Icons.share, 'SHARE'),
+        ],
+      ),
+    );
+
+    Widget buttonSection2 = Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -316,6 +328,7 @@ class MyApp extends StatelessWidget {
             
             titleSection,
             buttonSection,
+            buttonSection2,
             textSection,
           ],
         ),
