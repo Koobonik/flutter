@@ -276,7 +276,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Color color = Theme.of(context).primaryColor;
+    //Color color = Theme.of(context).primaryColor;
     Color brown = Colors.brown[500];
     Widget buttonSection = Container(
       padding: const EdgeInsets.only(bottom: 8),
@@ -294,9 +294,9 @@ class MyApp extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildButtonColumn(Colors.brown[500] , Icons.local_cafe, 'Espresso'),
-          _buildButtonColumn(Colors.brown[500] , Icons.near_me, 'ROUTE'),
-          _buildButtonColumn(Colors.brown[500] , Icons.share, 'SHARE'),
+          _buildButtonColumn(brown , Icons.local_cafe, 'Espresso'),
+          _buildButtonColumn(brown , Icons.near_me, 'ROUTE'),
+          _buildButtonColumn(brown , Icons.share, 'SHARE'),
         ],
       ),
     );
