@@ -275,7 +275,6 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
-
     //Color color = Theme.of(context).primaryColor;
     Color brown = Colors.brown[500];
     Widget buttonSection = Container(
@@ -289,18 +288,30 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
+    changeColor(){
+        Text("clicked");
+        print("he");
+    }
 
+    int number = 2;
     Widget buttonSection2 = Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
+        children: <Widget>[
+          new RaisedButton(
+            padding: const EdgeInsets.all(8.0),
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    onPressed: changeColor,
+                    child: new Text("Add"),
+          ),
           _buildButtonColumn(brown , Icons.local_cafe, 'Espresso'),
           _buildButtonColumn(brown , Icons.near_me, 'ROUTE'),
           _buildButtonColumn(brown , Icons.share, 'SHARE'),
         ],
       ),
     );
-
+    
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: Text(
