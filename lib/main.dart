@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
+
 // 코스테스 쿠폰북
 
 void main() {
@@ -12,28 +13,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(16),
       child: Row(
         children: [
           Expanded(
             /*1*/
             child: Column(
+              //mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /*2*/
                 Container(
-                  padding: const EdgeInsets.only(bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 16),
                   child: Text(
-                    '목록',
+                    '사장님의 한마디 라인',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Text(
-                  '금일은 빵이 맛있습니다~',
+                  '카테고리',
                   style: TextStyle(
-                    color: Colors.grey[500],
+                    //color: Colors.grey[500],
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
               ],
