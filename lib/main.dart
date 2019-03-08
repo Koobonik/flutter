@@ -55,8 +55,8 @@ class MyApp extends StatelessWidget {
         print("he");
     }
     // RaisedButton.icon(onPressed: null, icon: null, label: null);
-    int number = 2;
     Widget buttonSection = Container(
+      padding: const EdgeInsets.all(5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -107,6 +107,8 @@ class MyApp extends StatelessWidget {
     );
 
     Widget buttonSection2 = Container(
+      padding: const EdgeInsets.all(5),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
