@@ -102,7 +102,7 @@ Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
       title: Text('코스테스 쿠폰북'),
-      actions: <Widget>[      // Add 3 lines from here...
+      actions: <Widget>[      // Add 3 lines from here... // 네비게이션바임 아이콘버튼 만들고 액션 넣을 수 있음
           new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
         ],                      // ... to here.
     ),
