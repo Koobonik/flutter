@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-void main() => runApp(Espresso());
+void main() => runApp(TestView());
 
-class Espresso extends StatelessWidget {
+class TestView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final wordPair = WordPair.random();
@@ -66,7 +66,7 @@ class RandomWordsState extends State<RandomWords> {
       });
   }
 
-  void _pushSaved() { // 아이콘 버튼 눌렀을때 작동하는 함수
+  void _pushSaved() {
     Navigator.of(context).push(
       new MaterialPageRoute<void>(   // Add 20 lines from here...
       builder: (BuildContext context) {

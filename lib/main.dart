@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:my_app/sub.dart';
 import 'package:my_app/category/espresso.dart';
+import 'package:my_app/category/testview.dart';
+
 
 // 코스테스 쿠폰북
 
@@ -11,6 +13,9 @@ void main() {
 }
 void espresso(){
   runApp(Espresso());
+}
+  void testview(){
+    runApp(TestView());
 }
 
 
