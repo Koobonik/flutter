@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
         print("he");
     }
     // RaisedButton.icon(onPressed: null, icon: null, label: null);
-    Widget buttonSection = Container(
+    Widget buttonSection = Container( // 첫째줄
       padding: const EdgeInsets.all(5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -192,7 +192,7 @@ class MyApp extends StatelessWidget {
        ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('코스테스 쿠폰북'),
+          title: Text('Cafe Costes'),
         ),
         body: ListView(
           // 뷰들 에드시켜서 올리는 곳
