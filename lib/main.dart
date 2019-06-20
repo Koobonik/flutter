@@ -47,18 +47,23 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     //color: Colors.grey[500],
                     fontSize: 20,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
           ),
           /*3*/
+          
           Icon(
             Icons.star,
             color: Colors.red[500],
           ),
-          Text('41'),
+          Icon(
+            Icons.money_off,
+            color: Colors.red[500],
+          ),
+          Text('42'),
         ],
       ),
     );
@@ -68,6 +73,8 @@ class MyApp extends StatelessWidget {
         Text("clicked");
         print("he");
     }
+   
+    
     // RaisedButton.icon(onPressed: null, icon: null, label: null);
     Widget buttonSection = Container( // 첫째줄
       padding: const EdgeInsets.all(5),
